@@ -1,10 +1,17 @@
 // use nextId() to generate a new unique ID when needed
+import { useState } from "react";
 import nextId from "./generateId";
+import Die from "./Die";
+import DiceRoller from "./DiceRoller";
 
 function App() {
+
+  const [randomNumber, setRandomNumber] = useState('')
+
   return (
     <>
-      <p>Hello from the App!</p>
+      <DiceRoller onRoll={setRandomNumber} />
+      <Die number={randomNumber}/>
     </>
   );
 }
